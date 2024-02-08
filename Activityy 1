@@ -1,0 +1,19 @@
+public class NauticalMiles {
+    // Constants
+    public static final double KILOMETERS_IN_NAUTICAL_MILE = 1.852;
+    public static final double MILES_IN_NAUTICAL_MILE = 1.150779;
+
+    public static void main(String[] args) {
+        // Variable representing number of nautical miles
+        double nauticalMiles = 10; // Change this value to represent the desired number of nautical miles
+
+        // Compute values
+        double kilometers = nauticalMiles * KILOMETERS_IN_NAUTICAL_MILE;
+        double miles = nauticalMiles * MILES_IN_NAUTICAL_MILE;
+
+        // Display results
+        System.out.println("Value in nautical miles: " + nauticalMiles);
+        System.out.println("Value in kilometers: " + kilometers);
+        System.out.println("Value in miles: " + miles);
+    }
+}
