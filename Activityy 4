@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class NumbersDemo2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        displayTwiceTheNumber(num1);
+        displayNumberPlusFive(num2);
+        displayNumberSquared(num1);
+
+        scanner.close();
+    }
+
+    public static void displayTwiceTheNumber(int num) {
+        System.out.println("Twice the number " + num + " is: " + (num * 2));
+    }
+
+    public static void displayNumberPlusFive(int num) {
+        System.out.println("Number " + num + " plus five is: " + (num + 5));
+    }
+
+    public static void displayNumberSquared(int num) {
+        System.out.println("Square of the number " + num + " is: " + (num * num));
+    }
+}
