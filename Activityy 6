@@ -1,0 +1,26 @@
+// ShowStudent.java
+import java.util.Scanner;
+
+public class ShowStudent {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Student student = new Student();
+
+        System.out.print("Enter student's ID number: ");
+        int idNumber = scanner.nextInt();
+        student.setIdNumber(idNumber);
+
+        System.out.print("Enter number of credit hours earned: ");
+        int creditHoursEarned = scanner.nextInt();
+        student.setCreditHoursEarned(creditHoursEarned);
+
+        System.out.print("Enter number of points earned: ");
+        int pointsEarned = scanner.nextInt();
+        student.setPointsEarned(pointsEarned);
+
+        student.calculateGPA();
+
+        System.out.println("\nStudent Information:");
+        student.displayStudentInfo();
+    }
+}
