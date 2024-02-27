@@ -1,1 +1,32 @@
-TestJobApplicants.java
+// TestJobApplicants.java
+public class TestJobApplicants {
+    public static boolean isQualified(JobApplicant applicant) {
+        int skillsCount = 0;
+        if (applicant.isWordProcessing()) {
+            skillsCount++;
+        }
+        if (applicant.isSpreadsheets()) {
+            skillsCount++;
+        }
+        if (applicant.isDatabases()) {
+            skillsCount++;
+        }
+        if (applicant.isGraphics()) {
+            skillsCount++;
+        }
+        return skillsCount >= 3;
+    }
+    
+    public static void main(String[] args) {
+        // Creating job applicants
+        JobApplicant applicant1 = new JobApplicant("John Doe", "123-456-7890", true, true, false, true);
+        JobApplicant applicant2 = new JobApplicant("Jane Smith", "987-654-3210", true, false, true, false);
+        JobApplicant applicant3 = new JobApplicant("Alice Johnson", "555-123-4567", false, true, true, true);
+        
+        // Checking qualification for each applicant
+        System.out.println("Applicant 1: " + (isQualified(applicant1) ? "Qualified" : "Not qualified"));
+        System.out.println("Applicant 2: " + (isQualified(applicant2) ? "Qualified" : "Not qualified"));
+        System.out.println("Applicant 3: " + (isQualified(applicant3) ? "Qualified" : "Not qualified"));
+    }
+}
+
