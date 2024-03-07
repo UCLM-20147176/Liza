@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class ShowStudentCarondoy {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        StudentCarondoy student = new StudentCarondoy();
+
+        System.out.println("Enter test scores (enter 999 to finish): ");
+        int score;
+        int count = 0;
+        int sum = 0;
+        int highest = Integer.MIN_VALUE;
+        int lowest = Integer.MAX_VALUE;
+
+        while ((score = scanner.nextInt()) != 999) {
+            if (score < 0 || score > 100) {
+                System.out.println("Invalid score. Score must be between 0 and 100.");
+                continue;
+            }
+            count++;
+            sum += score;
+            highest = Math.max(highest, score);
+            lowest = Math.min(lowest, score);
+        }
+
+        if (count > 0) {
+            double average = (double) sum / count;
+            student.setNumberOfScores(count);
+            student.setHighestScore(highest);
+            student.setLowestScore(lowest);
+            student.setAverageScore(average);
+            student.displayStudentInfo();
+        } else {
+            System.out.println("No valid scores entered.");
+        }
+    }
+}
+
+public class StudentCarondoy {
+    private int idNumber;
+    private int creditHoursEarned;
+    private int pointsEarned;
+    private double gradePointAverage;
+
+    // New fields
+    private int numberOfScores;
+    private int highestScore;
+    private int lowestScore;
+    private double averageScore;
+
+    // Accessor and mutator methods for the new fields
+    public int getNumberOfScores() {
+        return numberOfScores;
+    }
+
+    public void setNumberOfScores(int numberOfScores) {
+        this.numberOfScores = numberOfScores;
+    }
+
+    public int getHighestScore() {
+        return highestScore;
+    }
+
+    public void setHighestScore(int highestScore) {
+        this.highestScore = highestScore;
+    }
+
+    public int getLowestScore() {
+        return lowestScore;
+    }
+
+    public void setLowestScore(int lowestScore) {
+        this.lowestScore = lowestScore;
+    }
+
+    public double getAverageScore() {
+        return averageScore;
+    }
+
+    public void setAverageScore(double averageScore) {
+        this.averageScore = averageScore;
+    }
+
+    // Rest of the class remains the same
+}
